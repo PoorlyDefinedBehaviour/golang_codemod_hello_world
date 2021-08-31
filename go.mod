@@ -2,4 +2,7 @@ module golang_codemod_example
 
 go 1.16
 
-require github.com/pkg/errors v0.9.1 // indirect
+require (
+	github.com/pkg/errors v0.9.1 // indirect
+	golang.org/x/tools v0.1.5 // indirect
+)
