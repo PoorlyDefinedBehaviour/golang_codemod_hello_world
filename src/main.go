@@ -19,8 +19,8 @@ func main() {
 	}
 	fmt.Println("-- original source code --\n\n", string(sourceCode))
 
-	// we want to go from errors.Wrapf(errBadStuff, "some context '%s'", label)
-	// to fmt.Errorf("some context '%s': %w", label, errBadStuff)
+	// we want to go from errors.Wrapf(errBadStuff, "some context")
+	// to fmt.Errorf("some context %w", errBadStuff)
 
 	updatedSourceCode, err := rewrite(sourceCode)
 	if err != nil {
