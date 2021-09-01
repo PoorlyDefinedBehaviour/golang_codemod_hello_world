@@ -99,6 +99,7 @@ func rewriteWrap(expr *ast.CallExpr) *ast.CallExpr {
 	// add the error format and " to the string
 	formatString.Value = value + `: %w"`
 
+	// ast node representing a call passing args as argument to fmt.Errof
 	return &ast.CallExpr{
 		Fun: &ast.SelectorExpr{
 			X: &ast.Ident{
