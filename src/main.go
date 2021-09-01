@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	sourceCode, err := ioutil.ReadFile("./file_to_mod.go")
+	sourceCode, err := ioutil.ReadFile("./fmt_errorf_example.go")
 	if err != nil {
 		panic(err)
 	}
@@ -119,7 +119,7 @@ func getCallExprLiteral(cursor *ast.CallExpr) string {
 		return ""
 	}
 
-	identifier := selector.X.(*ast.Ident)
+	identifier, ok := selector.X.(*ast.Ident)
 	if !ok {
 		return ""
 	}
